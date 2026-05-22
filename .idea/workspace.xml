@@ -4,13 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e93441b-8c68-48c2-a0de-b1b5a4c50721" name="Changes" comment="Tests and Benchmarking">
+    <list default="true" id="9e93441b-8c68-48c2-a0de-b1b5a4c50721" name="Changes" comment="Add Dijkstra path animation">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nationalgalleryroutefinder/model/Point2DInt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nationalgalleryroutefinder/algos/BFS2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nationalgalleryroutefinder/algos/BFS2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nationalgalleryroutefinder/benchmark/benchmarking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nationalgalleryroutefinder/benchmark/benchmarking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nationalgalleryroutefinder/algos/BFS2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nationalgalleryroutefinder/algos/BFSPixel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nationalgalleryroutefinder/algos/Dijkstra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nationalgalleryroutefinder/algos/Dijkstra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nationalgalleryroutefinder/benchmark/benchmarking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nationalgalleryroutefinder/benchmark/Benchmarks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nationalgalleryroutefinder/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nationalgalleryroutefinder/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nationalgalleryroutefinder/util/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nationalgalleryroutefinder/util/StringUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/nationalgalleryroutefinder/graph/GraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nationalgalleryroutefinder/graph/GraphTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/nationalgalleryroutefinder/model/ExhibitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nationalgalleryroutefinder/model/ExhibitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/nationalgalleryroutefinder/model/MyArrayListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nationalgalleryroutefinder/model/MyArrayListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/nationalgalleryroutefinder/model/RoomTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nationalgalleryroutefinder/model/RoomTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +26,13 @@
   </component>
   <component name="EmbeddingIndexingInfo">
     <option name="cachedIndexableFilesCount" value="46" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,61 +55,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0000000000000002" />
-      <entry key="S10" value="1.0000000179828887" />
-      <entry key="S30" value="1.0026272856235658" />
-      <entry key="S60" value="1.0539010816276306" />
-      <entry key="M2" value="1.278928717976072" />
-      <entry key="M5" value="1.909180981142906" />
-      <entry key="M10" value="2.52161144229607" />
-      <entry key="M15" value="2.8644715433309527" />
-      <entry key="M30" value="3.3350238353968065" />
-      <entry key="H1" value="3.637707333439477" />
-      <entry key="H2" value="3.8105645726455384" />
-      <entry key="H4" value="3.9030940743559865" />
-      <entry key="D1" value="3.983534682022244" />
-      <entry key="W1" value="3.9976399740255646" />
+      <entry key="MS100" value="1.0000084653432622" />
+      <entry key="MS500" value="1.0967228120991073" />
+      <entry key="S2" value="1.5591086614347625" />
+      <entry key="S5" value="1.9433531485961164" />
+      <entry key="S10" value="2.849819969706177" />
+      <entry key="S30" value="5.723531914830763" />
+      <entry key="S60" value="7.786252326156987" />
+      <entry key="M2" value="9.74022693903275" />
+      <entry key="M5" value="12.240171369024367" />
+      <entry key="M10" value="14.19739422282493" />
+      <entry key="M15" value="15.448893098308757" />
+      <entry key="M30" value="17.730725179195634" />
+      <entry key="H1" value="19.755565467480633" />
+      <entry key="H2" value="21.177010794485053" />
+      <entry key="H4" value="22.030430044101447" />
+      <entry key="D1" value="22.82955974949744" />
+      <entry key="W1" value="22.97542376734761" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="1.231139304646633E-154" />
-      <entry key="S2" value="4.044336006264759E-39" />
-      <entry key="S5" value="6.260422162048672E-16" />
-      <entry key="S10" value="3.497986997183111E-8" />
-      <entry key="S30" value="0.005240089599108146" />
-      <entry key="S60" value="0.11474428004398615" />
-      <entry key="M2" value="0.645700575905521" />
-      <entry key="M5" value="2.102941784246182" />
-      <entry key="M10" value="3.216214257834584" />
-      <entry key="M15" value="3.7190473401372266" />
-      <entry key="M30" value="4.308321903112581" />
-      <entry key="H1" value="4.640248755836942" />
-      <entry key="H2" value="4.81649634377704" />
-      <entry key="H4" value="4.907321678819781" />
-      <entry key="D1" value="4.984423244302416" />
-      <entry key="W1" value="4.9977715342094395" />
+      <entry key="MS500" value="9.12497970178666E-225" />
+      <entry key="S2" value="9.773676873467343E-57" />
+      <entry key="S5" value="3.9447836609471065E-23" />
+      <entry key="S10" value="6.280751277474216E-12" />
+      <entry key="S30" value="1.8453917336694244E-4" />
+      <entry key="S60" value="0.014041437121898084" />
+      <entry key="M2" value="0.1688743070197378" />
+      <entry key="M5" value="1.346871693381448" />
+      <entry key="M10" value="3.236519236587061" />
+      <entry key="M15" value="4.622659523956505" />
+      <entry key="M30" value="7.1909647152289455" />
+      <entry key="H1" value="9.447065989333145" />
+      <entry key="H2" value="11.012745122384521" />
+      <entry key="H4" value="11.945850143172295" />
+      <entry key="D1" value="12.815136198721127" />
+      <entry key="W1" value="12.973355494659389" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.4653131803158858E-11" />
-      <entry key="MS500" value="0.006810611246383298" />
-      <entry key="S2" value="0.28727413312624844" />
-      <entry key="S5" value="0.6071816096075068" />
-      <entry key="S10" value="0.7792186405223517" />
-      <entry key="S30" value="0.9279964452152012" />
-      <entry key="S60" value="1.1268853489284711" />
-      <entry key="M2" value="1.9001239696783543" />
-      <entry key="M5" value="3.997240631831428" />
-      <entry key="M10" value="5.728115594274154" />
-      <entry key="M15" value="6.576308146116725" />
-      <entry key="M30" value="7.639286285405227" />
-      <entry key="H1" value="8.27579302060948" />
-      <entry key="H2" value="8.625943152249494" />
-      <entry key="H4" value="8.809847421318223" />
-      <entry key="D1" value="8.967861857035848" />
-      <entry key="W1" value="8.995397750590241" />
+      <entry key="MS100" value="0.23326225223556454" />
+      <entry key="MS500" value="0.8306980508877138" />
+      <entry key="S2" value="1.4683308697250905" />
+      <entry key="S5" value="1.9007556912771857" />
+      <entry key="S10" value="2.824565111101061" />
+      <entry key="S30" value="5.712842435443359" />
+      <entry key="S60" value="7.792551640457478" />
+      <entry key="M2" value="9.900524490802429" />
+      <entry key="M5" value="13.576662756163593" />
+      <entry key="M10" value="17.423646731123423" />
+      <entry key="M15" value="20.062041560160687" />
+      <entry key="M30" value="24.914364469257453" />
+      <entry key="H1" value="29.197827437421488" />
+      <entry key="H2" value="32.18695828815334" />
+      <entry key="H4" value="33.97476371333621" />
+      <entry key="D1" value="35.64442496317368" />
+      <entry key="W1" value="35.94874007605042" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -114,6 +128,13 @@
   "keyToString": {
     "Application.Application.executor": "Run",
     "Application.Launcher.executor": "Run",
+    "JUnit.All in National-Gallery-Route-Finder.executor": "Run",
+    "JUnit.ExhibitTest.executor": "Run",
+    "JUnit.GraphTest.executor": "Run",
+    "JUnit.GraphTest.getAllVertices.executor": "Run",
+    "JUnit.MyArrayListTest.executor": "Run",
+    "JUnit.MyArrayListTest.testAddNull.executor": "Run",
+    "JUnit.RoomTest.executor": "Run",
     "Jmh.benchmarking.*.executor": "Run",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -144,8 +165,56 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="benchmarking.*" type="jmh-id" temporary="true" program-parameters="com.nationalgalleryroutefinder.benchmark.benchmarking.*" working-dir="$MODULE_WORKING_DIR$" benchmark-type="CLASS" benchmark-class="com.nationalgalleryroutefinder.benchmark.benchmarking" isAlternativeJrePathEnabled="false">
+    <configuration name="All in National-Gallery-Route-Finder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="National-Gallery-Route-Finder" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GraphTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="National-Gallery-Route-Finder" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nationalgalleryroutefinder.graph.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nationalgalleryroutefinder.graph" />
+      <option name="MAIN_CLASS_NAME" value="com.nationalgalleryroutefinder.graph.GraphTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GraphTest.getAllVertices" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="National-Gallery-Route-Finder" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nationalgalleryroutefinder.graph.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nationalgalleryroutefinder.graph" />
+      <option name="MAIN_CLASS_NAME" value="com.nationalgalleryroutefinder.graph.GraphTest" />
+      <option name="METHOD_NAME" value="getAllVertices" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyArrayListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="National-Gallery-Route-Finder" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nationalgalleryroutefinder.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nationalgalleryroutefinder.model" />
+      <option name="MAIN_CLASS_NAME" value="com.nationalgalleryroutefinder.model.MyArrayListTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -153,6 +222,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Launcher" />
+        <item itemvalue="JUnit.All in National-Gallery-Route-Finder" />
+        <item itemvalue="JUnit.MyArrayListTest" />
+        <item itemvalue="JUnit.GraphTest.getAllVertices" />
+        <item itemvalue="JUnit.GraphTest" />
       </list>
     </recent_temporary>
   </component>
@@ -172,8 +245,17 @@
       <updated>1779419965412</updated>
       <workItem from="1779419966457" duration="41000" />
       <workItem from="1779420095071" duration="398000" />
-      <workItem from="1779436514062" duration="2382000" />
+      <workItem from="1779436514062" duration="4549000" />
     </task>
+    <task id="LOCAL-00001" summary="Add Dijkstra path animation">
+      <option name="closed" value="true" />
+      <created>1779438926389</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1779438926389</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,6 +263,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Tests and Benchmarking" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tests and Benchmarking" />
+    <MESSAGE value="Add Dijkstra path animation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Dijkstra path animation" />
   </component>
 </project>

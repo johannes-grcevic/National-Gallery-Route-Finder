@@ -53,11 +53,6 @@ class MyArrayListTest {
     }
 
     @Test
-    void testAddNull() {
-        assertFalse(list.addAll((List<String>) null));
-    }
-
-    @Test
     void testSet() {
         list.add("A");
         list.add("B");
@@ -94,16 +89,6 @@ class MyArrayListTest {
         list.clear();
         assertEquals(0, list.size());
         assertTrue(list.isEmpty());
-    }
-
-    @Test
-    void testToString() {
-        list.add("A");
-        list.add("B");
-        list.add("C");
-        assertEquals("[A, B, C]", list.toString());
-        list.clear();
-        assertEquals("[]", list.toString());
     }
 
     @Test

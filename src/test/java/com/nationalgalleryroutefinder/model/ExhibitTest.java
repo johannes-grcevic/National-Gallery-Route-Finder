@@ -17,9 +17,9 @@ class ExhibitTest {
     void setup() throws IOException {
         CSVLoader loader = new CSVLoader();
         graph = loader.loadGraph(
-                "src/main/resources/ie/setu/nationalgalleryroutefinder/rooms.csv",
-                "src/main/resources/ie/setu/nationalgalleryroutefinder/exhibits.csv",
-                "src/main/resources/ie/setu/nationalgalleryroutefinder/edges.csv"
+                "src/main/resources/csv/rooms.csv",
+                "src/main/resources/csv/exhibits.csv",
+                "src/main/resources/csv/edges.csv"
         );
 
         room18 = graph.getVertex(18).getData();

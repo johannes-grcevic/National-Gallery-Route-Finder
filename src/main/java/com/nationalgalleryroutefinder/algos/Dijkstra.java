@@ -12,7 +12,7 @@ import java.util.Comparator;
 
 public final class Dijkstra {
 
-    // dijkstra algor which finds shortest weighted path between two rooms
+    // dijkstra algo that finds shortest weighted path between two rooms
     public static <T> List<T> traverse(Graph<T> graph, int startID, int endID, List<T> avoidedRooms) {
         List<T> result = new MyArrayList<>();
         Vertices<T> start = graph.getVertex(startID);

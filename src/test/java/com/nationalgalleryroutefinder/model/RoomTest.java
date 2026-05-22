@@ -9,16 +9,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RoomTest {
 
-    private Graph<Room> graph;
     private Room room18; // 18,"Peter Paul Rubens (1577–1640)","Baroque",316,109
 
     @BeforeEach
     void setup() throws IOException {
         CSVLoader loader = new CSVLoader();
-        graph = loader.loadGraph(
-                "src/main/resources/ie/setu/nationalgalleryroutefinder/rooms.csv",
-                "src/main/resources/ie/setu/nationalgalleryroutefinder/exhibits.csv",
-                "src/main/resources/ie/setu/nationalgalleryroutefinder/edges.csv"
+        Graph<Room> graph = loader.loadGraph(
+                "src/main/resources/csv/rooms.csv",
+                "src/main/resources/csv/exhibits.csv",
+                "src/main/resources/csv/edges.csv"
         );
         room18 = graph.getVertex(18).getData();
     }

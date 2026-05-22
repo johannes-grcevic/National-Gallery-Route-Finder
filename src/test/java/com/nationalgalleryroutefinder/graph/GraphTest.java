@@ -6,27 +6,29 @@ import com.nationalgalleryroutefinder.util.CSVLoader;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.io.IOException;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class GraphTest {
-
-    private Graph<Room> graph;
     private Vertices<Room> v18;
     private Vertices<Room> v19;
-    private MyArrayList<Vertices<Room>> allVertices;
+    private List<Vertices<Room>> allVertices = new MyArrayList<>();
 
     @BeforeEach
     void setup() throws IOException {
         CSVLoader loader = new CSVLoader();
-        graph = loader.loadGraph(
-                "src/main/resources/ie/setu/nationalgalleryroutefinder/rooms.csv",
-                "src/main/resources/ie/setu/nationalgalleryroutefinder/exhibits.csv",
-                "src/main/resources/ie/setu/nationalgalleryroutefinder/edges.csv"
+
+        Graph<Room> graph = loader.loadGraph(
+                "src/main/resources/csv/rooms.csv",
+                "src/main/resources/csv/exhibits.csv",
+                "src/main/resources/csv/edges.csv"
         );
 
         v18 = graph.getVertex(18);
         v19 = graph.getVertex(19);
-        MyArrayList<Vertices<Room>> allVertices;
+
+        allVertices = graph.getAllVertices();
     }
 
     @Test

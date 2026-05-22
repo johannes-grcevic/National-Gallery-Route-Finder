@@ -1,15 +1,3 @@
-.button {
-    -fx-background-color: LightGray;
-    -fx-border-radius: 25px;
-    -fx-background-radius: 5px;
-    -fx-cursor: hand;
-}
-
-.button:hover {
-    -fx-background-color: LightBlue;
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 0);
-}
-
 .border-pane {
     -fx-background-color: White;
     -fx-background-size: cover;

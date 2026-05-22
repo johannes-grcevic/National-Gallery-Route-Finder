@@ -34,7 +34,7 @@
                </Menu>
             <Menu mnemonicParsing="false" text="Select">
                <items>
-                      <MenuItem mnemonicParsing="false" onAction="#selectPoints" text="Pixel Points" />
+                      <MenuItem mnemonicParsing="false" onAction="#selectPoints" text="Path Points" />
                </items>
             </Menu>
                <Menu mnemonicParsing="false" text="View">

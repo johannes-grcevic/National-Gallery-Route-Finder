@@ -17,8 +17,7 @@ import org.openjdk.jmh.annotations.*;
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 @State(Scope.Thread)
-public class benchmarking {
-
+public class Benchmarks {
     private Graph<Room> graph;
     private int startID;
     private int endID;
@@ -49,10 +48,9 @@ public class benchmarking {
         endID   = vertices.get(endIndex).getData().getId();
     }
 
-    // benchmarks BFS traversal between two random roomss
+    // benchmarks BFS traversal between two random rooms
     @Benchmark
     public void runBFS() {
         BFS.traverse(graph, startID, endID);
     }
-
 }
