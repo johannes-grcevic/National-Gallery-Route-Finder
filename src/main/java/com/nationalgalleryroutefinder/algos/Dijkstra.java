@@ -12,11 +12,13 @@ import java.util.Comparator;
 
 public final class Dijkstra {
 
+    // dijkstra algor which finds shortest weighted path between two rooms
     public static <T> List<T> traverse(Graph<T> graph, int startID, int endID, List<T> avoidedRooms) {
         List<T> result = new MyArrayList<>();
         Vertices<T> start = graph.getVertex(startID);
         Vertices<T> end = graph.getVertex(endID);
         if (start == null || end == null) return result;
+
         List<Vertices<T>> vertices = graph.getAllVertices();
         int size = vertices.size();
 
@@ -24,7 +26,8 @@ public final class Dijkstra {
         for (int i = 0; i < size; i++) {
             map.put(System.identityHashCode(vertices.get(i)), i);
         }
-        // initialise all costs to infinity, parent to -1 (unvisited)
+
+        // initialise all costs to infinity
         double[] cost = new double[size];
         int[] parent = new int[size];
         Arrays.fill(cost, Double.MAX_VALUE);
@@ -32,19 +35,22 @@ public final class Dijkstra {
 
         // cost of reaching start from itself is 0
         cost[map.get(System.identityHashCode(start))] = 0;
+
         // min heap, always processes the cheapest known vertex next
-        // each entry is [vertexIndex, costToReach]
         PriorityQueue<double[]> heap = new PriorityQueue<>(Comparator.comparingDouble(a -> a[1]));
         heap.offer(new double[]{map.get(System.identityHashCode(start)), 0});
+
         while (!heap.isEmpty()) {
             double[] current = heap.poll();
             int currentIndex = (int) current[0];
             double currentCost = current[1];
+
             // skip if we've already found a cheaper path to this vertex
             if (currentCost > cost[currentIndex]) continue;
-
             Vertices<T> currentVertex = vertices.get(currentIndex);
+            // stop early if we've reached the destination
             if (currentVertex == end) break;
+
             // check each neighbour of the current vertex
             for (Edge<T> edge : currentVertex.getEdges()) {
                 Vertices<T> neighbour = edge.getDestination();
@@ -72,7 +78,12 @@ public final class Dijkstra {
         for (int i = reversePath.size() - 1; i >= 0; i--) {
             result.add(reversePath.get(i));
         }
-
         return result;
     }
+
+    // convenience method — just calls traverse with no avoided rooms
+    public static <T> List<T> shortestPath(Graph<T> graph, int startID, int endID) {
+        return traverse(graph, startID, endID, new MyArrayList<>());
+    }
+
 }

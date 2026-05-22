@@ -2,8 +2,10 @@ package com.nationalgalleryroutefinder.controller;
 
 import com.nationalgalleryroutefinder.algos.BFS;
 import com.nationalgalleryroutefinder.algos.BFS2;
+import com.nationalgalleryroutefinder.algos.Dijkstra;
 import com.nationalgalleryroutefinder.graph.Graph;
 import com.nationalgalleryroutefinder.main.Application;
+import com.nationalgalleryroutefinder.model.MyArrayList;
 import com.nationalgalleryroutefinder.model.Room;
 import com.nationalgalleryroutefinder.util.CSVLoader;
 import com.nationalgalleryroutefinder.util.FXUtils;
@@ -28,6 +30,18 @@ import javafx.scene.shape.LineTo;
 import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
 import javafx.util.Duration;
+import javafx.application.Platform;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -127,6 +141,30 @@ public class Controller implements Initializable {
                 imageView.removeEventHandler(MouseEvent.MOUSE_CLICKED, pointSelectionHandler);
             }
         };
+    }
+
+    private void showDijkstraPath() {
+        startRoomID = Integer.parseInt(FXUtils.showInputDialog("Dijkstra Path", "Enter the ID of the starting room", "Room ID:", "1"));
+        endRoomID = Integer.parseInt(FXUtils.showInputDialog("Dijkstra Path", "Enter the ID of the ending room", "Room ID:", "66"));
+
+        MyArrayList<Room> avoidedRooms = new MyArrayList<>();
+        // ask how many rooms to avoid, then collect each room ID to avoid
+        int numAvoid = Integer.parseInt(FXUtils.showInputDialog("Dijkstra Path", "Enter the number of rooms to avoid", "Number:", "1"));
+
+        for (int i = 0; i < numAvoid; i++) {
+            int avoidID = Integer.parseInt(FXUtils.showInputDialog("Dijkstra Path", "Enter the ID of the room you want to Avoid", "Room ID:", "0"));
+            avoidedRooms.add(graph.getVertex(avoidID).getData());
+        }
+
+        List<Room> path = Dijkstra.traverse(graph, startRoomID, endRoomID, avoidedRooms);
+
+        if (path.isEmpty()) {
+            setStatusBar("No Dijkstra path found from room " + startRoomID + " to room " + endRoomID, true);
+            return;
+        }
+
+        float animationDuration = Float.parseFloat(FXUtils.showInputDialog("Dijkstra Path", "Enter the duration of the animation (in seconds)", "Duration:", "5"));
+        drawPath(path, Duration.seconds(animationDuration));
     }
 
     public void choosePoints() {
