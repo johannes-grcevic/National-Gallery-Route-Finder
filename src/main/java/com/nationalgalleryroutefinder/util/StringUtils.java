@@ -9,7 +9,7 @@ public final class StringUtils {
      * @throws NullPointerException if {@code str} is {@code null}
      */
     public static String capitalize(String str) {
-        requireNonNull(str, "str");
+        requireNonNull(str);
 
         if (str.isEmpty()) return str;
 
@@ -25,7 +25,7 @@ public final class StringUtils {
      * @throws NullPointerException if {@code str} is {@code null}
      */
     public static String toTitleCase(String str) {
-        requireNonNull(str, "str");
+        requireNonNull(str);
         if (str.isEmpty()) return str;
 
         StringBuilder sb = new StringBuilder(str.length());
@@ -44,6 +44,23 @@ public final class StringUtils {
         }
 
         return sb.toString();
+    }
+
+    /**
+     * Formats a ratio in the range [0.0, 1.0] as a percentage string
+     * with the given number of decimal places (e.g. {@code 0.753, 1} → {@code "75.3%"}).
+     *
+     * @param value    the ratio to convert; expected to be between 0.0 and 1.0
+     * @param decimals the number of decimal places; must be ≥ 0
+     * @return the formatted percentage string
+     * @throws IllegalArgumentException if {@code decimals} is negative
+     */
+    public static String toPercentageOf(double value, int decimals) {
+        if (decimals < 0) throw new IllegalArgumentException("decimals must be >= 0, got " + decimals);
+
+        String format = "%." + decimals + "f%%";
+
+        return String.format(format, value * 100);
     }
 
     /**
@@ -67,27 +84,10 @@ public final class StringUtils {
         return toPercentageOf(value, 2);
     }
 
-    /**
-     * Formats a ratio in the range [0.0, 1.0] as a percentage string
-     * with the given number of decimal places (e.g. {@code 0.753, 1} → {@code "75.3%"}).
-     *
-     * @param value    the ratio to convert; expected to be between 0.0 and 1.0
-     * @param decimals the number of decimal places; must be ≥ 0
-     * @return the formatted percentage string
-     * @throws IllegalArgumentException if {@code decimals} is negative
-     */
-    public static String toPercentageOf(double value, int decimals) {
-        if (decimals < 0) throw new IllegalArgumentException("decimals must be >= 0, got " + decimals);
-
-        String format = "%." + decimals + "f%%";
-
-        return String.format(format, value * 100);
-    }
-
     // -------------------------------------------------------------------------
     // Internal helpers
     // -------------------------------------------------------------------------
-    private static void requireNonNull(Object value, String name) {
-        if (value == null) throw new NullPointerException("'" + name + "' must not be null");
+    private static void requireNonNull(Object value) {
+        if (value == null) throw new NullPointerException("'" + "str" + "' must not be null");
     }
 }

@@ -5,16 +5,98 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e93441b-8c68-48c2-a0de-b1b5a4c50721" name="Changes" comment="Tests and Benchmarking">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nationalgalleryroutefinder/algos/Dijkstra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nationalgalleryroutefinder/algos/Dijkstra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nationalgalleryroutefinder/algos/BFS2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nationalgalleryroutefinder/algos/BFS2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nationalgalleryroutefinder/benchmark/benchmarking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nationalgalleryroutefinder/benchmark/benchmarking.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nationalgalleryroutefinder/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nationalgalleryroutefinder/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nationalgalleryroutefinder/util/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nationalgalleryroutefinder/util/StringUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="46" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "johannes-grcevic"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/johannes-grcevic/National-Gallery-Route-Finder.git",
+    "accountId": "72e13a6d-0b10-4127-9b86-3cf302fabe02"
+  }
+}]]></component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0000000000000002" />
+      <entry key="S10" value="1.0000000179828887" />
+      <entry key="S30" value="1.0026272856235658" />
+      <entry key="S60" value="1.0539010816276306" />
+      <entry key="M2" value="1.278928717976072" />
+      <entry key="M5" value="1.909180981142906" />
+      <entry key="M10" value="2.52161144229607" />
+      <entry key="M15" value="2.8644715433309527" />
+      <entry key="M30" value="3.3350238353968065" />
+      <entry key="H1" value="3.637707333439477" />
+      <entry key="H2" value="3.8105645726455384" />
+      <entry key="H4" value="3.9030940743559865" />
+      <entry key="D1" value="3.983534682022244" />
+      <entry key="W1" value="3.9976399740255646" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="1.231139304646633E-154" />
+      <entry key="S2" value="4.044336006264759E-39" />
+      <entry key="S5" value="6.260422162048672E-16" />
+      <entry key="S10" value="3.497986997183111E-8" />
+      <entry key="S30" value="0.005240089599108146" />
+      <entry key="S60" value="0.11474428004398615" />
+      <entry key="M2" value="0.645700575905521" />
+      <entry key="M5" value="2.102941784246182" />
+      <entry key="M10" value="3.216214257834584" />
+      <entry key="M15" value="3.7190473401372266" />
+      <entry key="M30" value="4.308321903112581" />
+      <entry key="H1" value="4.640248755836942" />
+      <entry key="H2" value="4.81649634377704" />
+      <entry key="H4" value="4.907321678819781" />
+      <entry key="D1" value="4.984423244302416" />
+      <entry key="W1" value="4.9977715342094395" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.4653131803158858E-11" />
+      <entry key="MS500" value="0.006810611246383298" />
+      <entry key="S2" value="0.28727413312624844" />
+      <entry key="S5" value="0.6071816096075068" />
+      <entry key="S10" value="0.7792186405223517" />
+      <entry key="S30" value="0.9279964452152012" />
+      <entry key="S60" value="1.1268853489284711" />
+      <entry key="M2" value="1.9001239696783543" />
+      <entry key="M5" value="3.997240631831428" />
+      <entry key="M10" value="5.728115594274154" />
+      <entry key="M15" value="6.576308146116725" />
+      <entry key="M30" value="7.639286285405227" />
+      <entry key="H1" value="8.27579302060948" />
+      <entry key="H2" value="8.625943152249494" />
+      <entry key="H4" value="8.809847421318223" />
+      <entry key="D1" value="8.967861857035848" />
+      <entry key="W1" value="8.995397750590241" />
+    </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -31,11 +113,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Application.executor": "Run",
+    "Application.Launcher.executor": "Run",
     "Jmh.benchmarking.*.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -45,19 +130,36 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Launcher">
+    <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nationalgalleryroutefinder.main.Launcher" />
+      <module name="National-Gallery-Route-Finder" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nationalgalleryroutefinder.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="benchmarking.*" type="jmh-id" temporary="true" program-parameters="com.nationalgalleryroutefinder.benchmark.benchmarking.*" working-dir="$MODULE_WORKING_DIR$" benchmark-type="CLASS" benchmark-class="com.nationalgalleryroutefinder.benchmark.benchmarking" isAlternativeJrePathEnabled="false">
       <module name="National-Gallery-Route-Finder" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Launcher" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.26830.84" />
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.24374.151" />
       </set>
     </attachedChunks>
   </component>
@@ -70,6 +172,7 @@
       <updated>1779419965412</updated>
       <workItem from="1779419966457" duration="41000" />
       <workItem from="1779420095071" duration="398000" />
+      <workItem from="1779436514062" duration="2382000" />
     </task>
     <servers />
   </component>

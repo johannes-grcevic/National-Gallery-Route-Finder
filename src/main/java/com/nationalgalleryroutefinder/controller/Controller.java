@@ -15,7 +15,6 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.control.MenuBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
@@ -23,25 +22,12 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.LineTo;
 import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
 import javafx.util.Duration;
-import javafx.application.Platform;
-import javafx.event.EventHandler;
-import javafx.fxml.FXML;
-import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.image.Image;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -58,8 +44,6 @@ public class Controller implements Initializable {
     @FXML
     private Label statusLabel;
     @FXML
-    private MenuBar menuBar;
-    @FXML
     private ImageView imageView;
     @FXML
     private Pane imageOverlayPane;
@@ -71,9 +55,6 @@ public class Controller implements Initializable {
     private int endRoomID;
 
     private Graph<Room> graph;
-
-
-
 
     private BFS2.PointOnGraph startPoint = null;
     private BFS2.PointOnGraph endPoint = null;
@@ -114,7 +95,7 @@ public class Controller implements Initializable {
         }
 
         float animationDuration = Float.parseFloat(FXUtils.showInputDialog("BFS Path", "Enter the duration of the animation (in seconds)", "Duration:", "5"));
-        drawPath(path, Duration.seconds(animationDuration));
+        drawPathBFS(path, Duration.seconds(animationDuration));
     }
 
     // used to get coords for BFS with pixels
@@ -136,23 +117,25 @@ public class Controller implements Initializable {
 
             if (startPoint == null) {
                 startPoint = new BFS2.PointOnGraph(x, y);
-            } else if (endPoint == null) {
+            }
+            else if (endPoint == null) {
                 endPoint = new BFS2.PointOnGraph(x, y);
                 imageView.removeEventHandler(MouseEvent.MOUSE_CLICKED, pointSelectionHandler);
             }
         };
     }
 
-    private void showDijkstraPath() {
+    @FXML
+    public void showDijkstraPath() {
         startRoomID = Integer.parseInt(FXUtils.showInputDialog("Dijkstra Path", "Enter the ID of the starting room", "Room ID:", "1"));
-        endRoomID = Integer.parseInt(FXUtils.showInputDialog("Dijkstra Path", "Enter the ID of the ending room", "Room ID:", "66"));
+        endRoomID = Integer.parseInt(FXUtils.showInputDialog("Dijkstra Path", "Enter the ID of the ending room", "Room ID:", "8"));
 
         MyArrayList<Room> avoidedRooms = new MyArrayList<>();
         // ask how many rooms to avoid, then collect each room ID to avoid
-        int numAvoid = Integer.parseInt(FXUtils.showInputDialog("Dijkstra Path", "Enter the number of rooms to avoid", "Number:", "1"));
+        int numAvoid = Integer.parseInt(FXUtils.showInputDialog("Dijkstra Path", "Enter the number of rooms to avoid", "Number:", "3"));
 
         for (int i = 0; i < numAvoid; i++) {
-            int avoidID = Integer.parseInt(FXUtils.showInputDialog("Dijkstra Path", "Enter the ID of the room you want to Avoid", "Room ID:", "0"));
+            int avoidID = Integer.parseInt(FXUtils.showInputDialog("Dijkstra Path", "Enter the ID of the room you want to Avoid", "Room ID:", "2"));
             avoidedRooms.add(graph.getVertex(avoidID).getData());
         }
 
@@ -164,15 +147,18 @@ public class Controller implements Initializable {
         }
 
         float animationDuration = Float.parseFloat(FXUtils.showInputDialog("Dijkstra Path", "Enter the duration of the animation (in seconds)", "Duration:", "5"));
-        drawPath(path, Duration.seconds(animationDuration));
+        drawPathBFS(path, Duration.seconds(animationDuration));
     }
 
-    public void choosePoints() {
+    @FXML
+    public void selectPoints() {
         startPoint = null;
         endPoint = null;
 
         imageView.removeEventHandler(MouseEvent.MOUSE_CLICKED, pointSelectionHandler);
         imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, pointSelectionHandler);
+
+        setStatusBar("Click to select the start and end points", true);
     }
 
     @FXML
@@ -228,7 +214,7 @@ public class Controller implements Initializable {
         statusLabel.setVisible(visible);
     }
 
-    private void drawPath(List<Room> path, Duration duration) {
+    private void drawPathBFS(List<Room> path, Duration duration) {
         // clear the path from the image view
         clearPath();
 
@@ -278,7 +264,6 @@ public class Controller implements Initializable {
         imageOverlayPane.getChildren().addAll(animatedLinePath, startRoomCircle, endRoomCircle);
 
         // move to the first room in the path
-        MoveTo startRoom = new MoveTo(start.getX(), start.getY());
         animatedLinePath.getElements().add(new MoveTo(startX, startY));
 
         // skip the first room because it is already drawn

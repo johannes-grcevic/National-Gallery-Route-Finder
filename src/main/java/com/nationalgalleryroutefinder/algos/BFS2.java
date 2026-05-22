@@ -5,7 +5,7 @@ import com.nationalgalleryroutefinder.model.MyArrayList;
 import java.awt.image.BufferedImage;
 import java.util.*;
 
-public class BFS2 {
+public final class BFS2 {
 
     public record PointOnGraph(int x, int y) {}
 

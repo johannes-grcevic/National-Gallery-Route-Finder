@@ -9,46 +9,48 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.scene.layout.StackPane?>
 <BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" styleClass="border-pane" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nationalgalleryroutefinder.controller.Controller">
    <center>
        <StackPane fx:id="imageCenterPane" alignment="CENTER">
            <ImageView fx:id="imageView" fitHeight="600.0" fitWidth="1200.0" pickOnBounds="true" preserveRatio="true">
-               <Image url="@images/gallery_floor_plan.png"/>
+               <Image url="@images/gallery_floor_plan.png" />
            </ImageView>
 
-           <Pane fx:id="imageOverlayPane" maxHeight="600.0" maxWidth="1200.0" prefHeight="600.0" prefWidth="1200.0"
-                 mouseTransparent="true"/>
+           <Pane fx:id="imageOverlayPane" maxHeight="600.0" maxWidth="1200.0" mouseTransparent="true" prefHeight="600.0" prefWidth="1200.0" />
        </StackPane>
    </center>
    <top>
        <VBox alignment="CENTER" BorderPane.alignment="CENTER">
            <BorderPane.margin>
-               <Insets/>
+               <Insets />
            </BorderPane.margin>
            <MenuBar fx:id="menuBar" prefHeight="25.0" prefWidth="1280.0">
                <Menu mnemonicParsing="false" text="File">
-                   <MenuItem mnemonicParsing="false" onAction="#quitApplication" text="Quit"/>
+                   <MenuItem mnemonicParsing="false" onAction="#quitApplication" text="Quit" />
                </Menu>
-               <Menu mnemonicParsing="false" text="Edit"/>
+            <Menu mnemonicParsing="false" text="Select">
+               <items>
+                      <MenuItem mnemonicParsing="false" onAction="#selectPoints" text="Pixel Points" />
+               </items>
+            </Menu>
                <Menu mnemonicParsing="false" text="View">
-                   <MenuItem mnemonicParsing="false" onAction="#showBlackAndWhiteImage" text="Black and White"/>
-                   <MenuItem mnemonicParsing="false" onAction="#showBFSPath" text="BFS Path"/>
-                   <MenuItem mnemonicParsing="false" onAction="#choosePoints" text="Choose Pixels"/>
-                   <MenuItem mnemonicParsing="false" onAction="#showBFSWithPixels" text="BFS Path using Pixels"/>
+                   <MenuItem mnemonicParsing="false" onAction="#showBlackAndWhiteImage" text="Show BW" />
+                   <MenuItem mnemonicParsing="false" onAction="#showBFSPath" text="BFS Path" />
+                   <MenuItem mnemonicParsing="false" onAction="#showBFSWithPixels" text="BFS Path using Pixels" />
+               <MenuItem mnemonicParsing="false" onAction="#showDijkstraPath" text="Dijkstra Path" />
                </Menu>
            </MenuBar>
            <Pane prefWidth="1043.0">
                <VBox.margin>
-                   <Insets top="50.0"/>
+                   <Insets top="50.0" />
                </VBox.margin>
-               <Label fx:id="statusLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0"
-                      prefWidth="1200.0" text="National Gallery Route Finder" textAlignment="CENTER">
+               <Label fx:id="statusLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="1200.0" text="National Gallery Route Finder" textAlignment="CENTER">
                    <font>
-                       <Font size="20.0"/>
+                       <Font size="20.0" />
                    </font>
                </Label>
            </Pane>
